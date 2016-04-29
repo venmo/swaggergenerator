@@ -1,5 +1,5 @@
 swagger_generator
-================
+=================
 
 Creating swagger/OAS specs for an existing api by hand is tedious and error-prone.
 swagger_generator fixes this by creating schemas from example interactions:
