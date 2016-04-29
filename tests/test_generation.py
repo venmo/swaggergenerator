@@ -1,6 +1,6 @@
 import requests
 
-from swagger_generator import Generator, get_yaml
+from swaggergenerator import Generator, get_yaml
 
 
 def test_no_params(httpbin):

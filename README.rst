@@ -1,8 +1,8 @@
-swagger_generator
+swaggergenerator
 =================
 
 Creating swagger/OAS specs for an existing api by hand is tedious and error-prone.
-swagger_generator fixes this by creating schemas from example interactions:
+swaggergenerator fixes this by creating schemas from example interactions:
 
 Generation is a three step process.
 Here's an example using `httpbin <https://httpbin.org/get>`__:
@@ -10,7 +10,7 @@ Here's an example using `httpbin <https://httpbin.org/get>`__:
 .. code-block:: python
 
     import requests
-    from swagger_generator import Generator, get_yaml
+    from swaggergenerator import Generator, get_yaml
 
     # 1: Create a Generator.
     generator = Generator()
@@ -60,7 +60,7 @@ Here's an example using `httpbin <https://httpbin.org/get>`__:
                 type: string
             type: object
 
-You can install it with ``$ pip install swagger_generator``.
+You can install it with ``$ pip install swaggergenerator``.
 
 
 Generation details
@@ -95,7 +95,7 @@ Inside your vitualenv:
 
 .. code-block:: bash
 
-    $ cd swagger_generator
+    $ cd swaggergenerator
     $ pip install -e .
     $ pip install -r requirements.txt
 

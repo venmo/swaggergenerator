@@ -7,7 +7,7 @@ try:
 except ImportError:
     from distutils.core import setup
 
-packages = ['swagger_generator']
+packages = ['swaggergenerator']
 requires = [
     'flex >= 5.4.1',  # https://github.com/pipermerriam/flex/pull/111
     'pyyaml',
@@ -20,7 +20,7 @@ with open('README.rst') as f:
 # the version is kept in a seperate file and gets parsed - this
 # way, setup.py doesn't have to import the package.
 
-VERSIONFILE = 'swagger_generator/_version.py'
+VERSIONFILE = 'swaggergenerator/_version.py'
 
 version_line = open(VERSIONFILE).read()
 version_re = r"^__version__ = ['\"]([^'\"]*)['\"]"
@@ -31,15 +31,15 @@ else:
     raise RuntimeError("Could not find version in '%s'" % VERSIONFILE)
 
 setup(
-    name='swagger_generator',
+    name='swaggergenerator',
     version=version,
     description='Automatically generate swagger/OAS schemas from example api interactions.',
     long_description=readme,
     author='Simon Weber',
     author_email='simon@venmo.com',
-    url='https://github.com/venmo/swagger_generator',
+    url='https://github.com/venmo/swaggergenerator',
     packages=packages,
-    package_dir={'swagger_generator': 'swagger_generator'},
+    package_dir={'swaggergenerator': 'swaggergenerator'},
     include_package_data=True,
     install_requires=requires,
     license='MIT',

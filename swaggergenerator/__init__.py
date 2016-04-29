@@ -123,7 +123,7 @@ class Generator(object):
             `Path Item Objects <http://swagger.io/specification/#pathItemObject>`__.
 
         To output yaml for pasting into an existing schema, call
-        :func:`get_yaml <swagger_generator.get_yaml>` on the result.
+        :func:`get_yaml <swaggergenerator.get_yaml>` on the result.
         """
 
         valid_examples = self._merge_examples(self.path_to_examples)
