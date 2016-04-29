@@ -1,0 +1,2 @@
+recursive-include swagger_generator *.py
+include LICENSE README.rst
