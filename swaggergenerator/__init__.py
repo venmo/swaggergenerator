@@ -343,6 +343,7 @@ class Generator(object):
 
             # No definition matched; recurse into subschemas.
             for prop, prop_schema in schema['properties'].iteritems():
-                schema['properties'][prop] = self._match_references(prop_schema, body[prop])
+                if prop in body:
+                    schema['properties'][prop] = self._match_references(prop_schema, body[prop])
 
         return schema

@@ -236,3 +236,15 @@ def test_provided_default(httpbin):
 
     expected = {u'/get': {'post': {'responses': {'default': {'description': 'unexpected error', 'schema': {'$ref': '#/definitions/Error'}}}, 'description': 'TODO'}}}
     assert generator.generate_paths() == expected
+
+
+def test_optional_field_nonempty_example(httpbin):
+    generator = Generator()
+    response = requests.post(httpbin.url + '/post', json={'parent': {'other': True}})
+    generator.provide_example(response.request, response)
+
+    response = requests.post(httpbin.url + '/post', json={'parent': {'optional': True, 'other': True}})
+    generator.provide_example(response.request, response)
+
+    expected = {u'/post': {'post': {'responses': {'200': {'description': 'TODO', 'schema': {'additionalProperties': False, 'type': 'object', 'properties': {u'files': {'additionalProperties': False, 'type': 'object', 'properties': {}}, u'origin': {'type': 'string'}, u'form': {'additionalProperties': False, 'type': 'object', 'properties': {}}, u'url': {'type': 'string'}, u'args': {'additionalProperties': False, 'type': 'object', 'properties': {}}, u'headers': {'additionalProperties': False, 'type': 'object', 'properties': {u'Content-Length': {'type': 'string'}, u'Accept-Encoding': {'type': 'string'}, u'Connection': {'type': 'string'}, u'Accept': {'type': 'string'}, u'User-Agent': {'type': 'string'}, u'Host': {'type': 'string'}, u'Content-Type': {'type': 'string'}}}, u'json': {'additionalProperties': False, 'type': 'object', 'properties': {u'parent': {'additionalProperties': False, 'type': 'object', 'properties': {u'other': {'type': 'boolean'}, u'optional': {'type': 'boolean'}}}}}, u'data': {'type': 'string'}}}}}, 'parameters': [{'schema': {'additionalProperties': False, 'type': 'object', 'properties': {u'parent': {'additionalProperties': False, 'type': 'object', 'properties': {u'other': {'type': 'boolean'}, u'optional': {'type': 'boolean'}}}}}, 'name': 'body_data', 'in': 'body'}], 'description': 'TODO'}}}
+    assert generator.generate_paths() == expected
