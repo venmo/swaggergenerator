@@ -1,6 +1,8 @@
 swaggergenerator
 =================
 
+*[not actively supported outside of internal Venmo usage]*
+
 Creating swagger/OAS specs for an existing api by hand is tedious and error-prone.
 swaggergenerator fixes this by creating schemas from example interactions:
 
