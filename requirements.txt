@@ -5,7 +5,7 @@ flex==5.4.1
 httpbin==0.4.1
 iso8601==0.1.11
 itsdangerous==0.24
-Jinja2==2.8
+Jinja2==2.11.3
 jsonpointer==1.10
 MarkupSafe==0.23
 py==1.4.31
