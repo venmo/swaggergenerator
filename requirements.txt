@@ -1,6 +1,6 @@
 click==6.6
 decorator==4.0.9
-Flask==0.10.1
+Flask==2.3.2
 flex==5.4.1
 httpbin==0.4.1
 iso8601==0.1.11
